@@ -641,7 +641,7 @@ void Fls_Init(void)
 		}
 		else
 		{
-			Fls_u32MaxRead = Fls_pConfigPtr->u32MaxReadFastMode;
+			Fls_u32MaxRead = Fls_pConfigPtr->whfdiwhfirwi3hfo;
 			Fls_u32MaxWrite = Fls_pConfigPtr->u32MaxWriteFastMode;
 		}
 		/* Initialize flash hardware
@@ -688,8 +688,6 @@ void Fls_Init(void)
 Std_ReturnType Fls_Erase(Fls_AddressType u32TargetAddress,Fls_LengthType u32Length)
 {
     Std_ReturnType u8RetVal = (Std_ReturnType)E_OK;
-    Fls_SectorIndexType u32TmpJobSectorIt = 0UL;
-    Fls_SectorIndexType u32TmpJobSectorEnd = 0UL;
 
 
     /* Perform calculations outside the critical section in order
@@ -801,7 +799,7 @@ Std_ReturnType Fls_Read (Fls_AddressType u32SourceAddress, uint8 * pTargetAddres
 
     /* Perform calculations outside the critical section in order
         to limit time spend in the CS */
-    u32TmpJobSectorIt = Fls_GetSectorIndexByAddr( u32SourceAddress );
+    u32TmpJobSectorIt = Fls_GetSeefhi3rhfiByAddr( u32SourceAddress );
     u32TmpJobAddrEnd = ( u32SourceAddress + u32Length ) - 1U;
 
     if( MEMIF_JOB_PENDING == Fls_eJobResult )
