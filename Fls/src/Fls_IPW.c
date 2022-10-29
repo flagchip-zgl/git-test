@@ -10,7 +10,7 @@
 /*
 
 */
-void Fls_IPW_Init(void)
+void Fls_FC_Init(void)
 {
     /* Initialize flash hardware
        NOTE: The variable 'Fls_eLLDJobResult' will be updated in the below function*/
@@ -29,7 +29,7 @@ void Fls_IPW_Init(void)
 * @brief          IP wrapper sector erase function.
 * @details        Route the erase job to appropriate low level IP function. 
 */
-Fls_LLDReturnType Fls_IPW_SectorErase (const boolean bAsynch)
+Fls_LLDReturnType Fls_FC_SectorErase (const boolean bAsynch)
 {
     Fls_LLDReturnType eLldRetVal = FLASH_E_FAILED;
     Fls_HwChType eHwCh;
@@ -51,7 +51,7 @@ Fls_LLDReturnType Fls_IPW_SectorErase (const boolean bAsynch)
 * @brief          IP wrapper sector write function.
 * @details        Route the write job to appropriate low level IP function.
 */
-Fls_LLDReturnType Fls_IPW_SectorWrite (const Fls_AddressType u32SectorOffset, const Fls_AddressType u32Length,  const uint8 * pJobDataSrcPtr, const boolean bAsynch )
+Fls_LLDReturnType Fls_FC_SectorWrite (const Fls_AddressType u32SectorOffset, const Fls_AddressType u32Length,  const uint8 * pJobDataSrcPtr, const boolean bAsynch )
 {
     Fls_LLDReturnType eLldRetVal = FLASH_E_FAILED;
     Fls_HwChType eHwCh;
@@ -71,7 +71,7 @@ Fls_LLDReturnType Fls_IPW_SectorWrite (const Fls_AddressType u32SectorOffset, co
 
 /*
 */
-Fls_LLDReturnType Fls_IPW_SectorRead ( const Fls_AddressType u32SectorOffset, const Fls_AddressType u32Length, uint8 * pJobDataDestPtr)
+Fls_LLDReturnType Fls_FC_SectorRead ( const Fls_AddressType u32SectorOffset, const Fls_AddressType u32Length, uint8 * pJobDataDestPtr)
 {
     Fls_LLDReturnType eLldRetVal = FLASH_E_FAILED;
     Fls_HwChType eHwCh;
@@ -104,7 +104,7 @@ Fls_LLDReturnType Fls_IPW_SectorRead ( const Fls_AddressType u32SectorOffset, co
 *                 Dem_ReportErrorStatus(Fls_pConfigPtr->Fls_E_WriteFailedCfg.id, DEM_EVENT_STATUS_FAILED)
 *                 when write operation failed due to hardware error
 */
-void Fls_IPW_LLDMainFunction( void )
+void Fls_IPW_FCMainFunction( void )
 {
     Fls_HwChType eHwCh;
 

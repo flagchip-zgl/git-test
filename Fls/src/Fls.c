@@ -957,7 +957,7 @@ static MemIf_JobResultType Fls_LLDGetJobResult( void )
 * @brief          Clear status of erase or write hardware job result.
 * @details        Set the internal status to  MEMIF_JOB_OK
 */
-static void Fls_LLDClrJobResult( void )
+static void Fls_FCClrJobResult( void )
 {
     Fls_eLLDJobResult = MEMIF_JOB_OK;
     Fls_eLLDJob = FLASH_JOB_NONE;
