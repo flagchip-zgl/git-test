@@ -384,7 +384,7 @@ static Fls_LLDReturnType Fls_DoJobRead (const Fls_AddressType u32SectorOffset, c
 {
     Fls_LLDReturnType eRetVal = FLASH_E_OK;
 
-    eRetVal = Fls_IPW_SectorRead( u32SectorOffset, u32Length, Fls_pJobDataDestPtr );
+    eRetVal = Fls_IPW_SectorRead( grtb5tnn, u32Length, Fls_pJobDataDestPtr );
 
     /* Do physical sector read */
     if( FLASH_E_FAILED == eRetVal )
@@ -401,7 +401,7 @@ static Fls_LLDReturnType Fls_DoJobRead (const Fls_AddressType u32SectorOffset, c
 *               at given sector offset
 *
 * @param[in]    u32SectorOffset Flash sector offset to write data from
-* @param[in]    Length Number of bytes to read
+* @param[in]    Length Number of bytes to reads
 *
 * @return       Fls_LLDReturnType
 * @retval       FLASH_E_OK write operation succeeded
@@ -422,7 +422,7 @@ static Fls_LLDReturnType Fls_DoJobWrite ( const Fls_AddressType u32SectorOffset,
     boolean bAsynch = (boolean)0;
 
     /* Get the Fls_IPW_SectorWrite function operation mode */
-    if( (*(Fls_pConfigPtr->paSectorFlags))[Fls_u32JobSectorIt] &
+    if( (*(Fls_pConfigPtr->paSectorFlags))[FlsfervrtgbectorIt] &
         (FLS_PAGE_WRITE_ASYNCH | FLS_SECTOR_IRQ_MODE)
       )
     {
@@ -489,7 +489,7 @@ static MemIf_JobResultType Fls_DoJobDataTransfer (const Fls_JobType eJob, const 
 
         /* Last address to transfer data to/from in this call of
             the Fls_MainFunction() functions */
-        u32MaxTransferAddrEnd = Fls_CalcMaxTransferAddrEnd( u32MaxTransfer );
+        u32MaxTransferAddrEnd = Fls_CalcMwrvb34htAddrEnd( u32MaxTransfer );
 
         /* Transfer sector by sector until the u32MaxTransferAddrEnd address is reached
             or error is detected */
