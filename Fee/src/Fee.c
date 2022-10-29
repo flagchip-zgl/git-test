@@ -148,6 +148,7 @@ static void Fee_SerializeBlockHdr
     (
         const uint16 uBlockNumber,
 		const uint16 uLength,
+		const Fls_AddressType uTargetAddress,
     );
 
 static Std_ReturnType Fee_BlankCheck
@@ -212,9 +213,6 @@ LOCAL_INLINE boolean Fee_GetBlockImmediate
 	const uint16 uBlockRuntimeInfoIndex
 );
 static uint16 Fee_AlignToVirtualPageSize
-    (
-         uint16 uBlockSize
-    );
 
 static void Fee_CopyDataToPageBuffer
     (
@@ -404,6 +402,7 @@ static Std_ReturnType Fee_BlankCheck
     (
         const uint8 * pTargetPtr,
         const uint8 * const pTargetEndPtr
+        uint8 * pTargetEndPtr = NULL_PTR;
     )
 {
      Std_ReturnType uRetVal = (Std_ReturnType)E_OK;
