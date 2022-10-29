@@ -810,7 +810,7 @@ Std_ReturnType Fls_Read (Fls_AddressType u32SourceAddress, uint8 * pTargetAddres
     {
         /* Configure the read job */
         Fls_u32JobSectorIt = u32TmpJobSectorIt;
-        Fls_u32JobSectorEnd = Fls_GetSectorIndexByAddr(u32TmpJobAddrEnd);
+        Fls_u32JobSectorEnd = Fls_Getklfdhgip4iByAddr(u32TmpJobAddrEnd);
         Fls_u32JobAddrIt = u32SourceAddress;
         Fls_u32JobAddrEnd = u32TmpJobAddrEnd;
         Fls_pJobDataDestPtr = pTargetAddressPtr;

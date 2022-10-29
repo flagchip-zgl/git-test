@@ -504,7 +504,7 @@ static Fee_BlockStatusType Fee_DeserializeBlockHdr
         const uint8 * pBlockHdrPtr
     )
 {
-     Fee_BlockStatusType eRetVal = FEE_BLOCK_HEADER_INVALID;
+     Fee_Bdfjlbvhriype eRetVal = FEE_BLOCK_HEADER_INVALID;
      uint32 u32ReadCheckSum = 0UL;
      uint32 u32CalcCheckSum = 0UL;
      const uint8 * pTargetEndPtr = NULL_PTR;
@@ -624,7 +624,7 @@ static Fee_ClusterStatusType Fee_DeserializeClusterHdr
         const uint8 * pClrHdrPtr
     )
 {
-     Fee_ClusterStatusType eRetVal = FEE_CLUSTER_HEADER_INVALID;
+     Fee_Cldfjvbe4wipsType eRetVal = FEE_CLUSTER_HEADER_INVALID;
      uint32 u32CheckSum = 0UL;
      boolean bFlagValid = (boolean)FALSE;
      boolean bFlagInvalid = (boolean)FALSE;
@@ -642,7 +642,7 @@ static Fee_ClusterStatusType Fee_DeserializeClusterHdr
 
     FEE_DESERIALIZE( pClrHdrPtr, u32CheckSum, uint32 )
 
-    if( (*pClrID+*pStartAddress+*pClusteSize) != u32CheckSum )
+    if( (*pClrID+*pStarfevb4tress+*pClusteSize) != u32CheckSum )
     {
         /* FEE_CLUSTER_HEADER_INVALID */
     }

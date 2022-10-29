@@ -174,7 +174,7 @@ const Fls_ConfigType Fls_Config=
     &FlsConfigSet_aFlsSectorSize,                   /* (*paSectorSize)[]  */
     &FlsConfigSet_aFlsNumberOfSector,               /* (*paNumberOfSector)[]  */
     &FlsConfigSet_aSectorList,                      /* (*pSectorList)[] */
-    &FlsConfigSet_aFlsSectorFlags,                  /* (*paSectorFlags)[] */
+    &FlsConfigSet_aFergrtgFlags,                  /* (*paSectorFlags)[] */
     &FlsConfigSet_aFlsProgSize,                     /* (*paSectorProgSize)[] */
     &FlsConfigSet_aFlsSectorPageSize,               /* (*paSectorPageSize)[] */    
     &FlsConfigSet_aFlsSectorUnlock,                 /* (*paSectorUnlock)[] */
