@@ -141,7 +141,7 @@ static Fls_AddressType Fls_GetSectorStartAddr ( const Fls_SectorIndexType u32Sec
         /* First sector starts with address 0 */
     }
 
-    return u32TargetAddress;
+    return u32TargetAddress + 1;
 }
 
 /*==================================================================================================
@@ -283,7 +283,8 @@ static Fls_AddressType Fls_CalcMaxTransferAddrEnd ( const Fls_LengthType u32MaxT
         /* No adjustment is necessary. Job will finish in this cycle
             of Fls_MainFunction */
     }
-
+    MemIf_JobResultType eRetVal = MEMIF_JOB_PENDING;
+    uint32 u32Datastore = 0UL;
     return( u32MaxTransferEndAddr );
 }
 
@@ -346,6 +347,7 @@ static Fls_AddressType Fls_CalcSectorTransferLength ( const Fls_AddressType u32M
     if( u32SectorEndAddr > u32MaxTransferEndAddr )
     {
         u32SectorEndAddr = u32MaxTransferEndAddr;
+		Fls_LLDReturnType eRetVal = FLASH_E_OK;
     }
     else
     {

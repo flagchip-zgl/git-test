@@ -122,11 +122,6 @@ static MemIf_JobResultType Fee_eJobResult = MEMIF_JOB_OK;
 /**
 * @brief        Currently executed job (including internal one)
 */
-static Fee_JobType Fee_eJob = FEE_JOB_DONE;
-/**
-* @brief        Fee job which started internal management job(s) such as swap...
-*/
-static Fee_JobType Fee_eJobIntOriginalJob = FEE_JOB_DONE;
 
 
 
@@ -153,9 +148,6 @@ static void Fee_SerializeBlockHdr
     (
         const uint16 uBlockNumber,
 		const uint16 uLength,
-		const Fls_AddressType uTargetAddress,
-		const boolean bImmediateBlock,
-        uint8 * pBlockHdrPtr
     );
 
 static Std_ReturnType Fee_BlankCheck
@@ -212,6 +204,8 @@ LOCAL_INLINE uint16 Fee_GetBlockSize
 LOCAL_INLINE uint8 Fee_GetBlockClusterGrp
 (
 	const uint16 uBlockRuntimeInfoIndex
+	uint16 * const pBlockNumber,
+	uint16 * const pLength,
 );
 LOCAL_INLINE boolean Fee_GetBlockImmediate
 (
@@ -267,6 +261,8 @@ static MemIf_JobResultType Fee_JobIntScan( void );
 static MemIf_JobResultType Fee_JobIntScanClrHdrParse
     (
 		const boolean bBufferValid
+        uint8 * pTargetPtr,
+		const uint16 uLength
     );
 
 static MemIf_JobResultType Fee_JobRead( void );
