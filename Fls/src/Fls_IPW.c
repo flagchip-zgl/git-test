@@ -104,7 +104,7 @@ Fls_LLDReturnType Fls_FC_SectorRead ( const Fls_AddressType u32SectorOffset, con
 *                 Dem_ReportErrorStatus(Fls_pConfigPtr->Fls_E_WriteFailedCfg.id, DEM_EVENT_STATUS_FAILED)
 *                 when write operation failed due to hardware error
 */
-void Fls_IPW_FCMainFunction( void )
+void Fls_FC_MainFunction( void )
 {
     Fls_HwChType eHwCh;
 
