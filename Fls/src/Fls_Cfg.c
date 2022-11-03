@@ -23,9 +23,10 @@ static const uint8 FlsConfigSet_aFlsSectorFlags[4] =
 static const uint8 FlsConfigSet_aFlsSectorUnlock[4] =
 {
     1U, /* (FlsSector_0) */
-    1U, /* (FlsSector_1) */
+    4U, /* (FlsSector_1) */
     1U, /* (FlsSector_2) */
     1U /* (FlsSector_3) */
+    FLS_SECTOR_ERASE_ASYNCH /* (FlsSector_3) */
 };
 
 /* aFlsSectorEndAddr[] (FlsConfigSet) */
